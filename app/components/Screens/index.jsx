@@ -123,19 +123,18 @@ export default function Index() {
 
     textRefs.current.forEach((ref) => {
       if (ref.current) {
-        // Set the initial state to be off-screen to the right
         gsap.set(ref.current, { opacity: 0, x: 100 });
 
         gsap.to(ref.current, {
           scrollTrigger: {
             trigger: ref.current,
-            scrub: 3, // Adjust the smoothness of the scrubbing
-            start: "top bottom", // Start when the top of the element hits the bottom of the viewport
-            end: "center center", // End when the element is in the center of the viewport
+            scrub: 3,
+            start: "top bottom",
+            end: "center center",
           },
           opacity: 1,
-          x: 0, // Move text to its original position from right to left
-          ease: "power3.out", // Easing effect
+          x: 0,
+          ease: "power3.out",
         });
       }
     });

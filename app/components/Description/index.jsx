@@ -28,20 +28,18 @@ function AnimatedText({ children }) {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Ensure the element is initially invisible or off-screen
-    // For example, you can set opacity to 0 and x to -100% as initial state
     gsap.set(text.current, { opacity: 0, x: -100 });
 
     gsap.to(text.current, {
       scrollTrigger: {
         trigger: text.current,
-        scrub: 3, // Smooth scrubbing, adjust as needed
-        start: "top bottom", // Start animation when the top of the element hits the bottom of the viewport
-        end: "center center", // End animation when the element is in the center of the viewport
+        scrub: 3,
+        start: "top bottom",
+        end: "center center",
       },
       opacity: 1,
-      x: 0, // Move text to its original position
-      ease: "power3.out", // Ensure easing matches desired animation effect
+      x: 0,
+      ease: "power3.out",
     });
   }, []);
 
@@ -51,24 +49,3 @@ function AnimatedText({ children }) {
     </p>
   );
 }
-
-// function AnimatedText({ children }) {
-//   const text = useRef(null);
-
-//   useLayoutEffect(() => {
-//     gsap.registerPlugin(ScrollTrigger);
-//     gsap.from(text.current, {
-//       scrollTrigger: {
-//         trigger: text.current,
-//         scrub: true,
-//         start: "0px bottom",
-//         end: "bottom+=400px bottom",
-//       },
-//       opacity: 0,
-//       left: "-200px",
-//       ease: "power3.Out",
-//     });
-//   }, []);
-
-//   return <p ref={text}>{children}</p>;
-// }

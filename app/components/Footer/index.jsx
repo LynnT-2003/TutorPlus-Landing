@@ -1,5 +1,4 @@
 import styles from "./style.module.scss";
-import Image from "next/image";
 import { useLayoutEffect, useRef } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
 import gsap from "gsap";

@@ -22,7 +22,7 @@ export default function Intro() {
     });
 
     timeline
-      .from(background.current, { clipPath: "inset(0%)" }) // Animate to inset
+      .from(background.current, { clipPath: "inset(0%)" })
       .to(introImage.current, { height: "200px", duration: 1 }, 0);
   }, []);
 
