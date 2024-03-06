@@ -7,7 +7,9 @@ import Intro from "./components/Intro";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "./components/Preloader";
 import Description from "./components/Description";
+import Screens from "./components/Screens";
 import Footer from "./components/Footer";
+import SlidingImages from "./components/SlidingImages";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,6 +36,9 @@ export default function Home() {
         </AnimatePresence>
         <Intro />
         <Description />
+        <Screens />
+        <SlidingImages />
+        <Footer />
       </main>
     </>
   );
