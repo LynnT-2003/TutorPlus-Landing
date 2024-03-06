@@ -26,6 +26,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-html, body {
-  overflow: hidden;
+*{
+  -ms-overflow-style: none;
 }
+::-webkit-scrollbar {
+  display: none;
+}
+
