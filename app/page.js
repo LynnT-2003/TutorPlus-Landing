@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import styles from "./page.module.css";
-import Intro from "./components/intro";
+import Intro from "./components/Intro";
 import { AnimatePresence } from "framer-motion";
 import Preloader from "./components/Preloader";
 import Description from "./components/Description";
