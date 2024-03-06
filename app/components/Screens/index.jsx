@@ -116,6 +116,30 @@ export default function Index() {
   const [selectedProject, setSelectedProject] = useState(0);
   const container = useRef(null);
   const imageContainer = useRef(null);
+  const textRefs = useRef(projects.map(() => React.createRef()));
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    textRefs.current.forEach((ref) => {
+      if (ref.current) {
+        // Set the initial state to be off-screen to the right
+        gsap.set(ref.current, { opacity: 0, x: 100 });
+
+        gsap.to(ref.current, {
+          scrollTrigger: {
+            trigger: ref.current,
+            scrub: 3, // Adjust the smoothness of the scrubbing
+            start: "top bottom", // Start when the top of the element hits the bottom of the viewport
+            end: "center center", // End when the element is in the center of the viewport
+          },
+          opacity: 1,
+          x: 0, // Move text to its original position from right to left
+          ease: "power3.out", // Easing effect
+        });
+      }
+    });
+  }, []);
 
   return (
     <div ref={container} className={styles.projects}>
@@ -138,7 +162,7 @@ export default function Index() {
                 }}
                 className={styles.projectEl}
               >
-                <h2>{project.title}</h2>
+                <h2 ref={textRefs.current[index]}>{project.title}</h2>
               </div>
             );
           })}

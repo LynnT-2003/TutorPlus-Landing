@@ -1,8 +1,9 @@
 import styles from "./style.module.scss";
 import Image from "next/image";
-import { useRef } from "react";
-import { useScroll, motion, useTransform, useSpring } from "framer-motion";
-
+import { useLayoutEffect, useRef } from "react";
+import { useScroll, motion, useTransform } from "framer-motion";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -11,6 +12,8 @@ import { CardActionArea } from "@mui/material";
 
 export default function index() {
   const container = useRef(null);
+  const meetTheTeamRef = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end end"],
@@ -18,6 +21,28 @@ export default function index() {
   const x = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const y = useTransform(scrollYProgress, [0, 1], [-500, 0]);
   const rotate = useTransform(scrollYProgress, [0, 1], [120, 90]);
+
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    if (meetTheTeamRef.current) {
+      gsap.fromTo(
+        meetTheTeamRef.current,
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: meetTheTeamRef.current,
+            start: "top center+=100",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
+    }
+  }, []);
+
   return (
     <motion.div
       style={{ y, marginTop: "0px" }}
@@ -26,7 +51,9 @@ export default function index() {
     >
       <div className={styles.body}>
         <div className={styles.title}>
-          <h2 className="pb-10">Meet the team.</h2>
+          <h2 className="pb-10" ref={meetTheTeamRef}>
+            Meet the team.
+          </h2>
           <span>
             <Card sx={{ maxWidth: 500 }}>
               <CardActionArea>

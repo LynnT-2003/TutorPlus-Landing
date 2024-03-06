@@ -45,7 +45,7 @@ export default function Intro() {
         <div
           ref={introImage}
           data-scroll
-          data-scroll-speed="0.3"
+          data-scroll-speed="0.1"
           className={styles.introImage}
         >
           <Image
@@ -55,7 +55,7 @@ export default function Intro() {
             priority={true}
           />
         </div>
-        <h1 data-scroll data-scroll-speed="0.7">
+        <h1 data-scroll data-scroll-speed="0.5">
           VMS TUTORING
         </h1>
       </div>

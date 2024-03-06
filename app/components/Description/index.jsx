@@ -35,7 +35,7 @@ function AnimatedText({ children }) {
     gsap.to(text.current, {
       scrollTrigger: {
         trigger: text.current,
-        scrub: 1, // Smooth scrubbing, adjust as needed
+        scrub: 3, // Smooth scrubbing, adjust as needed
         start: "top bottom", // Start animation when the top of the element hits the bottom of the viewport
         end: "center center", // End animation when the element is in the center of the viewport
       },
