@@ -95,7 +95,7 @@ export default function index() {
                 <CardMedia
                   component="img"
                   sx={{ width: 400, height: 400, objectFit: "cover" }}
-                  image="/images/user.jpg"
+                  image="/images/Lucus.jpg"
                 />
                 <CardContent sx={{ backgroundColor: "transparent" }}>
                   <Typography gutterBottom variant="h4" component="div">

@@ -95,6 +95,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const projects = [
   {
+    title: "Classes Screen",
+    src: "Frame 679demo.png",
+  },
+  {
     title: "Landing Screen",
     src: "landing_screen.png",
   },
@@ -105,10 +109,6 @@ const projects = [
   {
     title: "Booking Screen",
     src: "booking_screen.png",
-  },
-  {
-    title: "Classes Screen",
-    src: "Frame 679demo.png",
   },
 ];
 
