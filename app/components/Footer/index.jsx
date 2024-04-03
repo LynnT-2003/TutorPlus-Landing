@@ -84,7 +84,7 @@ export default function index() {
                     Saw Zwe Wai Yan
                   </Typography>
                   <Typography variant="h5" color="text.secondary">
-                    Project Manager
+                    Project Manager / Developer
                   </Typography>
                 </CardContent>
               </CardActionArea>

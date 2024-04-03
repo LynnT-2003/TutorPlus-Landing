@@ -96,19 +96,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const projects = [
   {
     title: "Landing Screen",
-    src: "background.jpeg",
+    src: "landing_screen.png",
   },
   {
     title: "Discovery Screen",
-    src: "truelab_horizontal.png",
+    src: "discovery_screen.png",
   },
   {
-    title: "Appointment Screen",
-    src: "background.jpeg",
+    title: "Booking Screen",
+    src: "booking_screen.png",
   },
   {
     title: "Classes Screen",
-    src: "truelab_horizontal.png",
+    src: "Frame 679demo.png",
   },
 ];
 
