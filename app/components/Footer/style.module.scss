@@ -4,11 +4,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #141516;
+  background-color: #1a1a1a;
   position: relative;
   .button{
       border-radius: 3em;
-      border: 1px solid rgb(136, 136, 136);
       cursor: pointer;
       position: relative;
       display: flex;
@@ -25,10 +24,10 @@
   }
   .body{
       padding-top: 310px;
-      padding-bottom: 100px;
+      padding-bottom: 25px;
       width: 100%;
       max-width: 1800px;
-      background-color: #141516;
+      background-color: #1a1a1a;
     //   justify-content: center; 
 
       .title{

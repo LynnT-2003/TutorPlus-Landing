@@ -1,0 +1,27 @@
+.description{
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: 2.5vw;
+  margin-top: 26vw;
+  margin-left: 10vw;
+}
+.description p{
+  margin: 0px;
+  position: relative;
+}
+
+.circleContainer{
+  position: relative;
+  margin-top: 10px;
+  .circle{
+      height: 1550%;
+      width: 120%;
+      left: -10%;
+      border-radius: 0 0 50% 50%;
+      background-color: white;
+      z-index: 1;
+      position: absolute;
+      box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
+  }
+}

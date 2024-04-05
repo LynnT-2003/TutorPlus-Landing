@@ -56,7 +56,7 @@ export default function Intro() {
           />
         </div>
         <h1 data-scroll data-scroll-speed="0.5">
-          VMS TUTORING
+          TUTORPLUS +
         </h1>
       </div>
     </div>

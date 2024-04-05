@@ -1,23 +1,35 @@
 import React, { useLayoutEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScroll, useTransform, motion } from "framer-motion";
 import gsap from "gsap";
-import styles from "./style.module.css";
+import styles from "./style.module.scss";
 
 const phrases = [
-  "Introducing TutorPlus",
-  "A modernized Tutoring Services Portal ",
+  "INTRODUCING TUTORPLUS:",
+  "A MODERNIZED TUTORING SERVICES APP ",
   // "to Promote our Faculty's Tutoring Services.",
-  "Build an effective learning environment",
-  "For everyone in the Faculty with us.",
-  "Developed by the students for the students.",
+  "- Foster an effective learning environment.",
+  "- Start actively learning together with us.",
+  "- Developed by the students for the students.",
 ];
 
 export default function Index() {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"],
+  });
+  const height = useTransform(scrollYProgress, [0, 0.9], [50, 0]);
+
   return (
-    <div className={styles.description}>
+    <div ref={container} className={styles.description}>
       {phrases.map((phrase, index) => {
         return <AnimatedText key={index}>{phrase}</AnimatedText>;
       })}
+
+      {/* <motion.div style={{ height }} className={styles.circleContainer}>
+        <div className={styles.circle}></div>
+      </motion.div> */}
     </div>
   );
 }
